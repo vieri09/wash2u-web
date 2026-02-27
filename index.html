@@ -1,145 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Wash Near Me | Premium Car Wash in Selangor & KL | Wash2U Malaysia</title>
+  <meta name="description" content="Looking for the best car wash near me? Wash2U Malaysia provides premium car wash & detailing services in Selayang, Rawang & Cheras. 10,000+ satisfied customers.">
+  <meta name="geo.region" content="MY-10">
+  <meta name="geo.placename" content="Selangor, Kuala Lumpur">
+  <meta name="geo.position" content="3.1390;101.6869">
+  <!-- Font Awesome 6 (free) for professional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter & Playfair Display for premium mix -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- RESET & VARIABLES ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<title>Car Wash Near Me | Premium Car Wash in Selangor & KL | Wash2U Malaysia</title>
-<meta name="description" content="Looking for the best car wash near me? Wash2U Malaysia provides premium car wash & detailing services in Selayang, Rawang & Cheras. 10,000+ satisfied customers.">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fafcfb;
+      color: #1e2b2f;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-<meta name="geo.region" content="MY-10">
-<meta name="geo.placename" content="Selangor, Kuala Lumpur">
-<meta name="geo.position" content="3.1390;101.6869">
+    /* premium color palette */
+    :root {
+      --deep-charcoal: #121b1f;
+      --gold: #c7a857;
+      --gold-light: #e0c97e;
+      --dark-slate: #2a3b41;
+      --pure-white: #ffffff;
+      --soft-gray: #f0f4f3;
+      --text-dark: #1e2b2f;
+      --text-soft: #3f4f55;
+      --shadow: 0 20px 35px -8px rgba(0,20,10,0.15);
+      --border-glow: 0 0 0 1px rgba(199, 168, 87, 0.2);
+    }
 
-<link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/script.js"></script>
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- TYPOGRAPHY ---------- */
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), #f5e2b0);
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--deep-charcoal);
+    }
+
+    p {
+      color: var(--text-soft);
+      font-size: 1.05rem;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 5px 25px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(199,168,87,0.2);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(135deg, #1e2b2f 0%, #2a3b41 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.01em;
+    }
+
+    nav a {
+      margin: 0 18px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+    nav a:hover {
+      color: var(--gold);
+    }
+    nav a:after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--gold);
+      transition: 0.25s;
+    }
+    nav a:hover:after {
+      width: 100%;
+    }
+
+    header .btn {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: var(--deep-charcoal);
+      padding: 8px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    header .btn:hover {
+      background: var(--gold);
+      color: #121b1f;
+      border-color: var(--gold);
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+      background: linear-gradient(135deg, #0e1a20 0%, #1d2e35 100%);
+      color: white;
+      padding: 100px 40px;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    .hero:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M20 30 L40 10 L60 30 L80 10 L90 30 L70 60 L90 80 L60 70 L40 90 L20 70 L10 40 L20 30" fill="none" stroke="%23c7a857" stroke-width="0.5"/></svg>');
+      background-size: 180px;
+      opacity: 0.2;
+      z-index: -1;
+    }
+    .hero h1 {
+      color: white;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .hero p {
+      color: rgba(255,255,240,0.85);
+      font-size: 1.3rem;
+      margin-bottom: 35px;
+    }
+    .hero .btn {
+      background: var(--gold);
+      color: #121b1f;
+      border: none;
+      padding: 14px 42px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 15px 25px -8px rgba(199,168,87,0.3);
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .hero .btn:hover {
+      background: #e5d09b;
+      transform: scale(1.02);
+      box-shadow: 0 20px 30px -5px rgba(199,168,87,0.5);
+    }
+
+    /* ---------- SECTION BASE ---------- */
+    .section {
+      padding: 90px 0;
+    }
+    .dark {
+      background-color: var(--soft-gray);
+    }
+
+    /* ---------- GRID / CARDS ---------- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--pure-white);
+      padding: 32px 25px;
+      border-radius: 28px;
+      box-shadow: var(--shadow), var(--border-glow);
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      border: 1px solid rgba(199,168,87,0.15);
+      text-align: left;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 45px -15px rgba(0,40,20,0.2), 0 0 0 1px var(--gold);
+    }
+    .card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      background: rgba(199,168,87,0.08);
+      padding: 12px;
+      border-radius: 18px;
+    }
+    .card h3 {
+      margin: 10px 0 8px;
+    }
+    .card p {
+      margin-bottom: 20px;
+    }
+    .rating {
+      font-weight: 600;
+      color: var(--deep-charcoal);
+      background: #f4efe3;
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      border: 1px solid #e9dcbf;
+    }
+    .rating i {
+      font-size: 0.9rem;
+      padding: 0;
+      background: none;
+      color: var(--gold);
+      margin-right: 4px;
+    }
+    .card .btn {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: var(--deep-charcoal);
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .card .btn:hover {
+      background: var(--gold);
+      color: #121b1f;
+    }
+
+    /* ---------- FAQ STYLING ---------- */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 50px;
+      margin-top: 30px;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding-bottom: 20px;
+    }
+    .faq-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--deep-charcoal);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .faq-item h3 i {
+      color: var(--gold);
+      font-size: 1.4rem;
+      width: 30px;
+    }
+    .faq-item p {
+      margin-left: 40px;
+      color: #3f4f55;
+    }
+
+    @media (max-width: 700px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--deep-charcoal);
+      color: #b7bfc2;
+      text-align: center;
+      padding: 35px 20px;
+      border-top: 3px solid var(--gold);
+      font-size: 1rem;
+    }
+
+    /* ---------- WHATSAPP FLOAT ---------- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      color: white;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 15px 30px rgba(37,211,102,0.3);
+      font-size: 2rem;
+      transition: 0.2s;
+      z-index: 99;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background: #20b859;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      header {
+        padding: 15px 25px;
+        flex-wrap: wrap;
+      }
+      nav a {
+        margin: 0 8px;
+      }
+      h1 { font-size: 2.6rem; }
+      h2 { font-size: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .grid { gap: 25px; }
+      .hero { padding: 70px 20px; }
+      nav { order: 3; width: 100%; margin-top: 12px; text-align: center; }
+      header .btn { margin-left: auto; }
+    }
+
+    /* additional premium touch: stats micro */
+    .stats-banner {
+      display: flex;
+      justify-content: space-around;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 80px;
+      padding: 20px 10px;
+      max-width: 800px;
+      margin: 40px auto 0;
+      border: 1px solid rgba(199,168,87,0.25);
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--deep-charcoal);
+    }
+    .stat-label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-<div class="logo">Wash2U Malaysia</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="locations.html">Locations</a>
-<a href="blog.html">Blog</a>
-<a href="contact.html">Contact</a>
-</nav>
-<a href="tel:+60123456789" class="btn">Call Now</a>
+  <div class="logo">Wash2U Malaysia</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="locations.html">Locations</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a href="tel:+60123456789" class="btn"><i class="fas fa-phone-alt" style="margin-right: 6px;"></i>Call Now</a>
 </header>
 
 <section class="hero">
-<h1>Premium Car Wash & Detailing Services in Selangor</h1>
-<p>Serving 10,000+ satisfied customers across Selangor & Kuala Lumpur</p>
-<a href="contact.html" class="btn">Book Now</a>
+  <h1>Premium Car Wash & Detailing Services in Selangor</h1>
+  <p>Serving 10,000+ satisfied customers across Selangor & Kuala Lumpur</p>
+  <a href="contact.html" class="btn">Book Now</a>
+
+  <!-- subtle stats banner for social proof -->
+  <div class="stats-banner">
+    <div class="stat-item">
+      <div class="stat-number">10k+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4.9★</div>
+      <div class="stat-label">629 Reviews</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Locations</div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<div class="container">
-<h2>Why We Are the Best Car Wash Near You</h2>
-<p>If you are searching for a <strong>car wash near me</strong> in Selayang, Rawang, or Cheras, Wash2U Malaysia delivers premium automotive detailing with 5-star rated service.</p>
+  <div class="container">
+    <h2>Why We Are the Best Car Wash Near You</h2>
+    <p style="max-width: 700px; margin-bottom: 30px;">If you are searching for a <strong>car wash near me</strong> in Selayang, Rawang, or Cheras, Wash2U Malaysia delivers premium automotive detailing with 5-star rated service.</p>
 
-<div class="grid grid-3">
-<div class="card">
-<h3>Exterior Wash</h3>
-<p>Deep foam wash with premium products.</p>
-</div>
-<div class="card">
-<h3>Polishing</h3>
-<p>Remove swirl marks and restore gloss.</p>
-</div>
-<div class="card">
-<h3>Coating</h3>
-<p>Long-lasting ceramic protection.</p>
-</div>
-</div>
-
-</div>
+    <div class="grid grid-3">
+      <div class="card">
+        <i class="fas fa-spray-can-sparkles"></i>
+        <h3>Exterior Wash</h3>
+        <p>Deep foam wash with premium pH-neutral products.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-gem"></i>
+        <h3>Polishing</h3>
+        <p>Remove swirl marks and restore brilliant gloss.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-shield-halded"></i>
+        <h3>Coating</h3>
+        <p>Long-lasting ceramic protection with hydrophobic shine.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section dark">
-<div class="container">
-<h2>Our Locations in Selangor & Kuala Lumpur</h2>
+  <div class="container">
+    <h2>Our Locations in Selangor & Kuala Lumpur</h2>
 
-<div class="grid grid-3">
-
-<div class="card">
-<h3>Wash2U Lotus’s Selayang</h3>
-<p class="rating">4.8★ (261+ Reviews)</p>
-<p>Car wash in Selayang near Lotus’s Selayang.</p>
-<a href="locations.html" class="btn">Get Directions</a>
-</div>
-
-<div class="card">
-<h3>Wash2U Lotus’s Rawang</h3>
-<p class="rating">4.9★ (292+ Reviews)</p>
-<p>Car wash in Rawang near Rawang Mall.</p>
-<a href="locations.html" class="btn">Get Directions</a>
-</div>
-
-<div class="card">
-<h3>Wash2U YouCity Retail</h3>
-<p class="rating">5.0★ (76+ Reviews)</p>
-<p>Car wash in Cheras near You City Retail Mall.</p>
-<a href="locations.html" class="btn">Get Directions</a>
-</div>
-
-</div>
-</div>
+    <div class="grid grid-3">
+      <!-- Lotus’s Selayang -->
+      <div class="card">
+        <i class="fas fa-map-pin"></i>
+        <h3>Wash2U Lotus’s Selayang</h3>
+        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.8★ (261+ Reviews)</p>
+        <p>Car wash in Selayang near Lotus’s Selayang. Fast & convenient.</p>
+        <a href="locations.html" class="btn">Get Directions <i class="fas fa-arrow-right" style="margin-left: 6px;"></i></a>
+      </div>
+      <!-- Rawang -->
+      <div class="card">
+        <i class="fas fa-map-pin"></i>
+        <h3>Wash2U Lotus’s Rawang</h3>
+        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9★ (292+ Reviews)</p>
+        <p>Car wash in Rawang near Rawang Mall. Open daily.</p>
+        <a href="locations.html" class="btn">Get Directions <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <!-- Cheras YouCity -->
+      <div class="card">
+        <i class="fas fa-map-pin"></i>
+        <h3>Wash2U YouCity Retail</h3>
+        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0★ (76+ Reviews)</p>
+        <p>Car wash in Cheras near You City Retail Mall. Premium detail hub.</p>
+        <a href="locations.html" class="btn">Get Directions <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<div class="container">
-<h2>Frequently Asked Questions</h2>
-
-<h3>How much is car wash in Selangor?</h3>
-<p>Car wash prices in Selangor range from RM15 to RM50 depending on vehicle size and services selected.</p>
-
-<h3>Where is the best car wash near me?</h3>
-<p>Wash2U Malaysia is one of the highest-rated car wash centers in Selayang, Rawang and Cheras.</p>
-
-<h3>How long does a car wash take?</h3>
-<p>Standard wash takes 30–45 minutes. Full detailing may take 2–4 hours.</p>
-
-<h3>What is the difference between polishing and coating?</h3>
-<p>Polishing restores paint shine. Coating adds long-term protective layer.</p>
-
-<h3>How often should I wash my car in Malaysia?</h3>
-<p>We recommend every 1–2 weeks due to Malaysia’s weather and rain exposure.</p>
-
-<h3>Do you offer interior detailing?</h3>
-<p>Yes, including deep vacuum, leather cleaning and odor removal.</p>
-
-<h3>Is car coating worth it?</h3>
-<p>Yes. Ceramic coating protects against UV rays, rain and dirt buildup.</p>
-
-<h3>Which outlet has the highest rating?</h3>
-<p>Our Cheras YouCity outlet currently holds a 5.0★ rating.</p>
-
-</div>
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <!-- using existing Q&A, enriched with icons -->
+      <div class="faq-item">
+        <h3><i class="fas fa-tag"></i> How much is car wash in Selangor?</h3>
+        <p>Car wash prices in Selangor range from RM15 to RM50 depending on vehicle size and services selected.</p>
+      </div>
+      <div class="faq-item">
+        <h3><i class="fas fa-location-dot"></i> Where is the best car wash near me?</h3>
+        <p>Wash2U Malaysia is one of the highest-rated car wash centers in Selayang, Rawang and Cheras.</p>
+      </div>
+      <div class="faq-item">
+        <h3><i class="fas fa-clock"></i> How long does a car wash take?</h3>
+        <p>Standard wash takes 30–45 minutes. Full detailing may take 2–4 hours.</p>
+      </div>
+      <div class="faq-item">
+        <h3><i class="fas fa-circle-info"></i> What is the difference between polishing and coating?</h3>
+        <p>Polishing restores paint shine. Coating adds long-term protective layer.</p>
+      </div>
+      <div class="faq-item">
+        <h3><i class="fas fa-calendar-week"></i> How often should I wash my car in Malaysia?</h3>
+        <p>We recommend every 1–2 weeks due to Malaysia’s weather and rain exposure.</p>
+      </div>
+      <div class="faq-item">
+        <h3><i class="fas fa-couch"></i> Do you offer interior detailing?</h3>
+        <p>Yes, including deep vacuum, leather cleaning and odor removal.</p>
+      </div>
+      <div class="faq-item">
+        <h3><i class="fas fa-medal"></i> Is car coating worth it?</h3>
+        <p>Yes. Ceramic coating protects against UV rays, rain and dirt buildup.</p>
+      </div>
+      <div class="faq-item">
+        <h3><i class="fas fa-star"></i> Which outlet has the highest rating?</h3>
+        <p>Our Cheras YouCity outlet currently holds a 5.0★ rating.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
-<p>© 2026 Wash2U Malaysia | Premium Car Wash in Selangor & KL</p>
+  <p>© 2026 Wash2U Malaysia | Premium Car Wash in Selangor & KL</p>
+  <div style="margin-top: 20px; color: #7e8f96;">
+    <i class="fab fa-facebook-f" style="margin: 0 12px;"></i>
+    <i class="fab fa-instagram" style="margin: 0 12px;"></i>
+    <i class="fab fa-whatsapp" style="margin: 0 12px;"></i>
+  </div>
 </footer>
 
-<a href="https://wa.me/60123456789" class="whatsapp-float">WhatsApp</a>
+<a href="https://wa.me/60123456789" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-<!-- JSON-LD LocalBusiness + FAQ Schema -->
+<!-- JSON-LD LocalBusiness + FAQ Schema (kept original and extended) -->
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"AutoWash",
-"name":"Wash2U Malaysia",
-"areaServed":["Selangor","Kuala Lumpur"],
-"aggregateRating":{
-"@type":"AggregateRating",
-"ratingValue":"4.9",
-"reviewCount":"629"
-}
+  "@context":"https://schema.org",
+  "@type":"AutoWash",
+  "name":"Wash2U Malaysia",
+  "areaServed":["Selangor","Kuala Lumpur"],
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.9",
+    "reviewCount":"629"
+  }
 }
 </script>
-
+<!-- optional additional FAQ schema could be added but keep clean -->
 </body>
 </html>
